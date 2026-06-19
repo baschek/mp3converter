@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sansa-prep"
+version = "0.1.0"
+description = "Prepare YouTube audio as organized MP3 playlist folders for a Sansa Clip Zip."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "imageio-ffmpeg>=0.5.1",
+    "mutagen>=1.47.0",
+    "yt-dlp>=2024.8.6",
+]
+
+[project.scripts]
+sansa-prep = "sansa_prep.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
